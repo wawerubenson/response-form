@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third-Party Due Diligence Questionnaire</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .accordion-button:after {
+            content: '\002B';
+            font-size: 1.5em;
+        }
+
+        .accordion-button.collapsed:after {
+            content: '\2212';
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Third-Party Due Diligence Questionnaire</h1>
+        <form>
+            <div class="accordion" id="accordionExample">
+                <!-- Company Information -->
+
+                <div class="card">
+
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link accordion-button" type="button" data-toggle="collapse"
+                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Company Information
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="fullLegalName">Full Legal Name</label>
+                                <input type="text" class="form-control" id="fullLegalName" name="fullLegalName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tradingName">Trading Name (if any)</label>
+                                <input type="text" class="form-control" id="tradingName" name="tradingName">
+                            </div>
+                            <div class="form-group">
+                                <label for="website">Organization’s Website</label>
+                                <input type="url" class="form-control" id="website" name="website">
+                            </div>
+                            <div class="form-group">
+                                <label for="regulatorName">Name of Regulator (if applicable)</label>
+                                <input type="text" class="form-control" id="regulatorName" name="regulatorName">
+                            </div>
+                            <div class="form-group">
+                                <label for="regulatoryLicenseNo">Regulatory License No. (if applicable)</label>
+                                <input type="text" class="form-control" id="regulatoryLicenseNo" name="regulatoryLicenseNo">
+                            </div>
+                            <div class="form-group">
+                                <label for="registeredAddress">Registered Address</label>
+                                <input type="text" class="form-control" id="registeredAddress" name="registeredAddress" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="principalAddress">Address of principal place of business (if different from
+                                    the registered address)</label>
+                                <input type="text" class="form-control" id="principalAddress" name="principalAddress">
+                            </div>
+                            <div class="form-group">
+                                <label for="operatingCountries">List of countries where your organization operates
+                                    in</label>
+                                <input type="text" class="form-control" id="operatingCountries" name="operatingCountries" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="yearsInOperation">Provide the number of years in operation</label>
+                                <input type="number" class="form-control" id="yearsInOperation" name="yearsInOperation" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactInfo">Telephone number</label>
+                                <input type="text" class="form-control" id="contactInfo" name="contactInfo" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactInfo">Email Address</label>
+                                <input type="text" class="form-control" id="emailAddress" name="emailAddress" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="businessNature">Nature of business conducted by your organization, including
+                                    partnership details with Apollo Agriculture</label>
+                                <textarea class="form-control" id="businessNature" name="businessNature" rows="3" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Management and Ownership Information -->
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link accordion-button collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Management and Ownership Information
+                            </button>
+
+                        </h2>
+                    </div>
+
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+
+                        <div class="card-body">
+                            <p style="font-size: 15px; margin-top: 10px;">
+                                Please provide the details of the shareholders in the following format, including their
+                                nominees where
+                                applicable, who own, control, or have 5% or more voting interests. If the above is not
+                                applicable, kindly
+                                list the top 10 shareholders. If listed or state-owned, please provide listing
+                                certificate and relevant
+                                stature respectively
+                            </p>
+
+                            <div id="shareholder-entries">
+                                <div class="shareholder-entry">
+                                    <div class="form-group">
+                                        <label for="shareholders">Full Name</label>
+                                        <input class="form-control" name="shareholders[]" rows="3" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ultimateBeneficialOwners">Nationality/Country of
+                                            Incorporation</label>
+                                        <input class="form-control" name="ultimateBeneficialOwners[]" rows="3" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="boardOfDirectors">Registration /ID/Passport Number</label>
+                                        <input class="form-control" name="boardOfDirectors[]" rows="3" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="boardOfDirectors">Occupation/Type of Business</label>
+                                        <input class="form-control" name="occupation[]" rows="3" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="boardOfDirectors">% Ownership</label>
+                                        <input class="form-control" name="ownership[]" rows="3" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="boardOfDirectors">% PEPs Status (Yes/No)</label>
+                                        <input class="form-control" name="pepsStatus[]" rows="3" required>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="button-group mt-3">
+                                <button type="button" class="btn btn-success" id="add-shareholder-entry">Add Another
+                                    Entry</button>
+                                <button type="button" class="btn btn-danger" id="remove-shareholder-entry"
+                                    style="display: none;">Remove Last Entry</button>
+                            </div>
+
+                        </div>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                const addEntryButton = document.getElementById('add-shareholder-entry');
+                                const removeEntryButton = document.getElementById('remove-shareholder-entry');
+                                const shareholderEntries = document.getElementById('shareholder-entries');
+
+                                addEntryButton.addEventListener('click', function () {
+                                    const entry = document.querySelector('.shareholder-entry');
+                                    const newEntry = entry.cloneNode(true);
+                                    const inputs = newEntry.querySelectorAll('input');
+                                    inputs.forEach(input => input.value = '');
+
+                                    shareholderEntries.appendChild(newEntry);
+
+                                    // Show the remove button if there are more than one entry
+                                    if (shareholderEntries.children.length > 1) {
+                                        removeEntryButton.style.display = 'inline-block';
+                                    }
+                                });
+
+                                removeEntryButton.addEventListener('click', function () {
+                                    const entries = document.querySelectorAll('.shareholder-entry');
+                                    if (entries.length > 1) {
+                                        entries[entries.length - 1].remove();
+                                    }
+
+                                    // Hide the remove button if there is only one entry left
+                                    if (shareholderEntries.children.length === 1) {
+                                        removeEntryButton.style.display = 'none';
+                                    }
+                                });
+                            });
+
+                        </script>
+
+                        <div class="card-body" id="boardOfDirectorsSection">
+                            <p style="font-size: 15px; margin-top: 10px;">
+                                Please provide details of your organization’s Board of Directors in the table below:
+                            </p>
+                            <div class="form-group">
+                                <label for="boardFullName">Full Name</label>
+                                <input class="form-control" id="boardFullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="boardDesignation">Designation</label>
+                                <input class="form-control" id="boardDesignation" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="boardOwnership">% Ownership</label>
+                                <input class="form-control" id="boardOwnership" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="boardPEPStatus">PEPs Status (Yes/No)</label>
+                                <input class="form-control" id="boardPEPStatus" required>
+                            </div>
+
+                            <button id="addBoardEntryButton" class="btn btn-success">Add Another Entry</button>
+                            <button id="removeBoardEntryButton" class="btn btn-danger" style="display: none;">Remove
+                                previous Entry</button>
+                        </div>
+
+                        <script>
+                            document.getElementById('addBoardEntryButton').addEventListener('click', function () {
+                                var boardOfDirectorsSection = document.getElementById('boardOfDirectorsSection');
+
+                                var newEntry = document.createElement('div');
+                                newEntry.classList.add('entry');
+                                newEntry.innerHTML = `
+                                    <div class="form-group">
+                                        <label for="boardFullName">Full Name</label>
+                                        <input class="form-control" name="boardFullName[]" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="boardDesignation">Designation</label>
+                                        <input class="form-control" name="boardDesignation[]" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="boardOwnership">% Ownership</label>
+                                        <input class="form-control" name="boardOwnership[]" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="boardPEPStatus">PEPs Status (Yes/No)</label>
+                                        <input class="form-control" name="boardPEPStatus[]" required>
+                                    </div>
+                                `;
+                                boardOfDirectorsSection.insertBefore(newEntry, document.getElementById('addBoardEntryButton').nextSibling);
+                                document.getElementById('removeBoardEntryButton').style.display = 'inline-block';
+                            });
+
+                            document.getElementById('removeBoardEntryButton').addEventListener('click', function () {
+                                var boardOfDirectorsSection = document.getElementById('boardOfDirectorsSection');
+                                var entries = boardOfDirectorsSection.getElementsByClassName('entry');
+                                if (entries.length > 0) {
+                                    boardOfDirectorsSection.removeChild(entries[entries.length - 1]);
+                                }
+                                if (entries.length <= 1) {
+                                    document.getElementById('removeBoardEntryButton').style.display = 'none';
+                                }
+                            });
+
+                        </script>
+
+
+                        <div class="card-body" id="secondBoardOfDirectorsSection">
+                            <p style="font-size: 15px; margin-top: 10px;">
+                                Please provide details of your organization’s Board of Directors in the table below:
+                            </p>
+                            <div id="secondBoardEntries">
+                                <div class="form-group secondEntry">
+                                    <label for="secondBoardFullName">Full Name</label>
+                                    <input class="form-control" name="secondBoardFullName[]" required>
+                                </div>
+                                <div class="form-group secondEntry">
+                                    <label for="secondBoardDesignation">Designation</label>
+                                    <input class="form-control" name="secondBoardDesignation[]" required>
+                                </div>
+                                <div class="form-group secondEntry">
+                                    <label for="secondBoardOwnership">% Ownership</label>
+                                    <input class="form-control" name="secondBoardOwnership[]" required>
+                                </div>
+                                <div class="form-group secondEntry">
+                                    <label for="secondBoardPEPStatus">PEPs Status (Yes/No)</label>
+                                    <input class="form-control" name="secondBoardPEPStatus[]" required>
+                                </div>
+                            </div>
+                            <button id="addSecondBoardEntryButton" class="btn btn-success mr-3">Add Another Entry</button>
+                        </div>
+
+
+                        <script>
+
+                            document.getElementById('addSecondBoardEntryButton').addEventListener('click', function () {
+                                var secondBoardEntries = document.getElementById('secondBoardEntries');
+
+                                var newSecondEntry = document.createElement('div');
+                                newSecondEntry.classList.add('form-group', 'secondEntry');
+                                newSecondEntry.innerHTML = `
+                                    <label for="secondBoardFullName">Full Name</label>
+                                    <input class="form-control" name="secondBoardFullName[]" required>
+                                    <label for="secondBoardDesignation">Designation</label>
+                                    <input class="form-control" name="secondBoardDesignation[]" required>
+                                    <label for="secondBoardOwnership">% Ownership</label>
+                                    <input class="form-control" name="secondBoardOwnership[]" required>
+                                    <label for="secondBoardPEPStatus">PEPs Status (Yes/No)</label>
+                                    <input class="form-control" name="secondBoardPEPStatus[]" required>
+                                `;
+                                secondBoardEntries.appendChild(newSecondEntry);
+
+                                // Check if remove button exists
+                                var removeSecondButton = document.getElementById('removeSecondBoardEntryButton');
+                                if (!removeSecondButton) {
+                                    removeSecondButton = document.createElement('button');
+                                    removeSecondButton.id = 'removeSecondBoardEntryButton';
+                                    removeSecondButton.classList.add('btn', 'btn-danger');
+                                    removeSecondButton.textContent = 'Remove Previous Entry';
+                                    removeSecondButton.addEventListener('click', function () {
+                                        secondBoardEntries.removeChild(newSecondEntry);
+                                        if (secondBoardEntries.children.length === 1) {
+                                            // If no more entries left, remove the remove button
+                                            removeSecondButton.parentNode.removeChild(removeSecondButton);
+                                        }
+                                    });
+                                    // Insert the remove button next to the add button
+                                    this.parentNode.insertBefore(removeSecondButton, this.nextSibling);
+                                }
+                            });
+
+
+                        </script>
+
+                    </div>
+                </div>
+
+                <!-- Operational Arrangements -->
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link accordion-button collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Operational Arrangements
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="financialRelationships">Does the organization use/plan to use any other
+                                    companies on the proposed engagement, including
+                                    subsidiaries, affiliates, partnerships or joint ventures of the
+                                    Third Party, or individuals other than your own employees
+                                    to perform services under the proposed agreement?
+                                    If YES, identify the name and physical address of the
+                                    organization or individual to be used, describe the
+                                    relationship to the organization and the activities it will
+                                    perform.</label>
+                                <textarea class="form-control" id="financialRelationships" rows="3" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="importedProducts">Does your organization maintain correspondent
+                                    relationships with any financial institutions
+                                    incorporated/located in sanctioned countries? If YES,
+                                    please provide names of the financial organizations.</label>
+                                <textarea class="form-control" id="importedProducts" rows="3" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="importedProducts">Does your organization import/source products from
+                                    other countries? If YES, please list the countries</label>
+                                <textarea class="form-control" id="importedProducts" rows="3" required></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Anti-Bribery/Anti-Corruption Program Assessment -->
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link accordion-button collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Anti-Bribery/Anti-Corruption Program Assessment
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+
+                            <p style="font-size: 15px; margin-top: 10px;">
+                                Please provide details of the official responsible for antibribery, anti - corruption &
+                                anti – fraud program within your
+                                organization in the following format:
+                            </p>
+
+                            <div class="form-group">
+                                <label for="antiBriberyOfficial">Name</label>
+                                <input class="form-control" id="antiBriberyOfficial" rows="3" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="antiBriberyOfficial">Designation</label>
+                                <input class="form-control" id="antiBriberyOfficial" rows="3" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="antiBriberyOfficial">ID/Passport</label>
+                                <input class="form-control" id="antiBriberyOfficial" rows="3" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="antiBriberyOfficial">Nationality</label>
+                                <input class="form-control" id="antiBriberyOfficial" rows="3" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="antiBriberyOfficial">Email Address</label>
+                                <input class="form-control" id="antiBriberyOfficial" rows="3" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="investigations">Has your organization, any of its
+                                    directors/shareholders/senior managers ever been
+                                    investigated, prosecuted or fined for any criminal offense?
+                                    If YES, give particulars of the court in which the
+                                    organization was convicted, the offense, the penalty
+                                    imposed and the date of conviction.</label>
+                                <input class="form-control" id="investigations" rows="3" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="disciplineWarnings">Has your organization been involved, disciplined, warned
+                                    against future conduct, or publicly criticized by any
+                                    authority or body in any country? If YES, provide details. </label>
+                                <textarea class="form-control" id="disciplineWarnings" rows="3" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="debt">Has your organization failed to satisfy debt adjudged due
+                                    and payable on order of court in any country, or has it
+                                    made any compromise arrangement with its creditors
+                                    within the last 10 years? If YES, provide details. </label>
+                                <textarea class="form-control" id="debt" rows="3" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bankruptcy">Has your organization been declared bankrupt by a court
+                                    in any country, or has a Bankruptcy petition ever been
+                                    served on the organization? If YES, provide details.</label>
+                                <textarea class="form-control" id="bankruptcy" rows="3" required></textarea>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="litigation">Has your organization or any of its
+                                    directors/shareholders/senior managers ever been held
+                                    liable by a court in any country for any fraud or other
+                                    misconduct? If YES, provide details.</label>
+                                <textarea class="form-control" id="litigation" rows="3" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="litigation">Is your organization, any of its directors/shareholders/
+                                    managers presently, other than in a professional capacity,
+                                    expected to be engaged in any litigation in any country? If
+                                    YES, provide details. </label>
+                                <textarea class="form-control" id="litigation" rows="3" required></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Protection Assessment -->
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link accordion-button collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Data Protection Assessment
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+
+                            <div class="form-group">
+                                <label for="dataProtectionPolicy">Does your organization have a written policy on the
+                                    handling and safeguarding of any material, non-public
+                                    information, personal identifiable information?</label>
+                                <textarea class="form-control" id="dataProtectionPolicy" rows="3" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="securityTraining">Do your employees receive security awareness and
+                                    training?</label>
+                                <textarea class="form-control" id="securityTraining" rows="3" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerDataProtection">Does the data protection and/or privacy policy
+                                    extend to
+                                    personal data that you process on behalf of your
+                                    customers?</label>
+                                <textarea class="form-control" id="customerDataProtection" rows="3" required></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Declaration -->
+                <div class="card">
+                    <div class="card-header" id="headingSix">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link accordion-button collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Declaration by the Compliance Representative or any Authorized Signatory
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p style="font-size: 15px; margin-top: 10px;">
+                                I certify to the best of my knowledge that the information provided in this
+                                questionnaire is current,
+                                accurate and reflective of the organization’s position, policies, procedures and
+                                practices.
+                                I further confirm that I am duly authorized to complete and execute this document.
+                            </p>
+                            <div class="form-group">
+                                <label for="complianceRepresentative">Name </label>
+                                <input type="text" class="form-control" id="complianceRepresentative" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signature">Signature</label>
+                                <input type="text" class="form-control" id="signature" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" id="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="declarationEmail">Email</label>
+                                <input type="email" class="form-control" id="declarationEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="declarationPhone">Phone Number</label>
+                                <input type="tel" class="form-control" id="declarationPhone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="declarationDate">Date</label>
+                                <input type="date" class="form-control" id="declarationDate" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Accompanying Documents -->
+                <div class="card">
+                    <div class="card-header" id="headingSeven">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link accordion-button collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Accompanying Documents
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
+                        data-parent="#accordionExample">
+
+                        <div class="form-group">
+                            <label for="third_party_due_diligence_doc">Duly completed and executed Third Party Due Diligence Questionnaire </label>
+                            <input type="file" class="form-control" id="third_party_due_diligence_doc" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="certified_incorporation_memorandum">Certified copies of Certificate of Incorporation, Memorandum and Articles of
+                                Association or CR 2 form</label>
+                            <input type="file" class="form-control" id="certified_incorporation_memorandum" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bussiness_permit">Certified copy of the current business permit where applicable</label>
+                            <input type="file" class="form-control" id="bussiness_permit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="official_ownwership_doc">Certified copy of the official ownership document/current official search report/ CR
+                                12</label>
+                            <input type="file" class="form-control" id="official_ownwership_doc" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="org_registration_cert">Certified copy of the organization’s tax registration certificate</label>
+                            <input type="file" class="form-control" id="org_registration_cert" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="certified_copies_of_license">Certified/notarized copies of license/authorization where applicable</label>
+                            <input type="file" class="form-control" id="certified_copies_of_license" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="copies_of_cr8">Certified copies of CR 8, identification documents for
+                                directors/shareholders/ultimate beneficial owners and nominated signatories</label>
+                            <input type="file" class="form-control" id="declarationDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tax_registration_cert">Certified copies of tax registration certificates for Kenyan
+                                directors/shareholders/ultimate beneficial owners and nominated signatories</label>
+                            <input type="file" class="form-control" id="tax_registration_cert" required>
+                        </div>
+
+                       
+
+
+                        <!-- <div class="card-body">
+                            <ol>
+                                <li>Duly completed and executed Third Party Due Diligence Questionnaire</li>
+                                <li>Certified copies of Certificate of Incorporation, Memorandum and Articles of
+                                    Association or CR 2 form</li>
+                                <li>Certified copy of the current business permit where applicable</li>
+                                <li>Certified copy of the official ownership document/current official search report/ CR
+                                    12</li>
+                                <li>Certified copy of the organization’s tax registration certificate</li>
+                                <li>Certified/notarized copies of license/authorization where applicable</li>
+                                <li>Certified copies of CR 8, identification documents for
+                                    directors/shareholders/ultimate beneficial owners and nominated signatories</li>
+                                <li>Certified copies of tax registration certificates for Kenyan
+                                    directors/shareholders/ultimate beneficial owners and nominated signatories</li>
+                            </ol>
+                        </div> -->
+                    </div>
+
+                </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </form>
+    </div>
+    <script>
+
+
+
+        $(document).ready(function () {
+            $('.accordion-button').on('click', function () {
+                $(this).toggleClass('collapsed');
+                $(this).parent().parent().next('.collapse').collapse('toggle');
+            });
+        });
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Function to handle form submission
+    function handleFormSubmission(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the values entered in the form
+        var formData = {
+            fullLegalName: document.getElementById('fullLegalName').value,
+            tradingName: document.getElementById('tradingName').value,
+            website: document.getElementById('website').value,
+            regulatorName: document.getElementById('regulatorName').value,
+            regulatoryLicenseNo: document.getElementById('regulatoryLicenseNo').value,
+            registeredAddress: document.getElementById('registeredAddress').value,
+            principalAddress: document.getElementById('principalAddress').value,
+            operatingCountries: document.getElementById('operatingCountries').value,
+            yearsInOperation: document.getElementById('yearsInOperation').value,
+            contactInfo: document.getElementById('contactInfo').value,
+            emailAddress: document.getElementById('emailAddress').value,
+            businessNature: document.getElementById('businessNature').value
+        };
+
+        // Log the form data to the console
+        console.log(formData);
+        // You can then send this data to your server using AJAX or perform any other actions you need.
+    }
+
+    // Add event listener for form submission
+    document.getElementById('myForm').addEventListener('submit', handleFormSubmission);
+
+    // Function to handle addition of new sections
+    function handleAdditionOfSection() {
+        // Get the newly added section's values
+        var newSectionValues = {
+            boardFullName: document.getElementById('boardFullName').value,
+            boardDesignation: document.getElementById('boardDesignation').value,
+            boardOwnership: document.getElementById('boardOwnership').value,
+            boardPEPStatus: document.getElementById('boardPEPStatus').value
+        };
+
+        // Log the values of the newly added section to the console
+        console.log('Newly added section values:', newSectionValues);
+        // You can then process these values as needed, such as adding them to the form data or storing them in an array.
+    }
+
+    // Add event listener for addition of new section
+    document.getElementById('addBoardEntryButton').addEventListener('click', handleAdditionOfSection);
+});
+
+</script>
+
+</body>
+
+</html>
